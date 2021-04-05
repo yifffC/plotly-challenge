@@ -74,11 +74,10 @@ function sampleMetadata(id) {
            var result = metadata.filter(meta => meta.id.toString() === id)[0];
 
            var demographicInfo = d3.select("#sample-metadata");
-
            demographicInfo.html("");
     
          // append the info to the panel
-            Object.entries(result).forEach((key) => {   
+            Object.entries(result).forEach(function(key) {   
                 demographicInfo.append("h5").text(key[0].toUpperCase() + ": " + key[1] + "\n");    
             });
         });
